@@ -4,7 +4,7 @@ const LOCAL_KEY = 'feedback-form-state';
 const saveFormEls = document.querySelector('.feedback-form');
 
 saveFormEls.addEventListener('input', throttle(onInputData, 600));
-saveFormEls.addEventListener('message', onFormSubmit);
+saveFormEls.addEventListener('submit', onFormSubmit);
 
 let dataForm = JSON.parse(localStorage.getItem(LOCAL_KEY)) || {};
 const { email, message } = saveFormEls.elements;
